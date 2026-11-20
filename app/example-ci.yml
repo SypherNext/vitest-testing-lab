@@ -1,0 +1,27 @@
+# An example workflow for YOUR project. Copy it to .github/workflows/ci.yml in your own repository.
+# It runs the tests on a Windows computer at GitHub every time you push code or open a pull request.
+name: Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: windows-latest
+    # Steps run in PowerShell on Windows runners (the default shell there).
+    steps:
+      # 1. Get your code onto the computer.
+      - uses: actions/checkout@v7
+
+      # 2. Install Node. "cache: npm" keeps the downloaded packages between runs, so the install is quicker.
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 26
+          cache: npm
+
+      # 3. Install exactly the versions in package-lock.json. "npm ci" fails if the lock file and package.json disagree.
+      - run: npm ci
+
+      # 4. Run the tests and measure coverage. Any failing test or missed coverage threshold fails the job.
+      - run: npx vitest run --coverage

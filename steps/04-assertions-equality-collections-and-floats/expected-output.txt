@@ -1,0 +1,7 @@
+RUN  v5.1.0 <repo>/steps/04-assertions-equality-collections-and-floats
+
+ ✓ tests/cart.test.ts (14 tests)
+ ✓ tests/money.test.ts (9 tests)
+
+ Test Files  2 passed (2)
+      Tests  23 passed (23)

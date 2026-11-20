@@ -1,0 +1,4 @@
+{
+  "description": "Lesson 25. What coverage cannot tell you: 100% coverage from tests that do not check anything.",
+  "runs": [{ "name": "coverage-without-assertions", "args": ["--coverage"], "exitCode": 0 }]
+}

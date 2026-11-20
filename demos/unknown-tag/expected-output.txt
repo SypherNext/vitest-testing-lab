@@ -1,0 +1,21 @@
+RUN  v5.1.0 <repo>/demos/unknown-tag
+
+ ❯ tests/typo.test.ts (0 test)
+
+ Test Files  1 failed (1)
+      Tests  no tests
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/typo.test.ts [ tests/typo.test.ts ]
+Error: The tag "slwo" is not defined in the configuration. Available tags are:
+- slow: Tests that take a noticeable amount of time.
+ ❯ tests/typo.test.ts:5:1
+      3| // The config lists one tag, "slow". This test uses "slwo" (a typo). V…
+      4| // so a mistyped tag cannot quietly make a test fall out of a tagged r…
+      5| test("adds two numbers", { tags: ["slwo"] }, () => {
+       | ^
+      6|   expect(1 + 1).toBe(2);
+      7| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯

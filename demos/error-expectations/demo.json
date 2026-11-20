@@ -1,0 +1,4 @@
+{
+  "description": "Lesson 05. Three ways to get errors wrong in a test: an unexpected throw, a missing throw and a wrong message.",
+  "runs": [{ "name": "error-expectations", "args": [], "exitCode": 1 }]
+}

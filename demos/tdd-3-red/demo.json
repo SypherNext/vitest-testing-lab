@@ -1,0 +1,4 @@
+{
+  "description": "Lesson 16. TDD cycle 2, red: a test for redeem fails because redeem does not exist yet. The first test still passes.",
+  "runs": [{ "name": "tdd-3-red", "args": [], "exitCode": 1 }]
+}

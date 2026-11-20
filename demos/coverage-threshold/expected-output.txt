@@ -1,0 +1,16 @@
+RUN  v5.1.0 <repo>/demos/coverage-threshold
+      Coverage enabled with v8
+
+ ✓ tests/receipt.test.ts (3 tests)
+
+ Test Files  1 passed (1)
+      Tests  3 passed (3)
+
+ % Coverage report from v8
+------------|---------|----------|---------|---------|-------------------
+File        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+------------|---------|----------|---------|---------|-------------------
+All files   |     100 |       75 |     100 |     100 |
+ receipt.ts |     100 |       75 |     100 |     100 | 15
+------------|---------|----------|---------|---------|-------------------
+ERROR: Coverage for branches (75%) does not meet global threshold (100%)

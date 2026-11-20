@@ -1,0 +1,7 @@
+RUN  v5.1.0 <repo>/demos/slowest-tests
+
+ ✓ tests/waiting.test.ts (5 tests)
+   ✓ waits a long time (400 milliseconds)
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)

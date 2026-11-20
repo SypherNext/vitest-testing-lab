@@ -1,0 +1,4 @@
+{
+  "description": "Lesson 04. A failing toEqual on a list of objects: Vitest prints a diff that marks the one field that is different.",
+  "runs": [{ "name": "failing-object-equality", "args": [], "exitCode": 1 }]
+}

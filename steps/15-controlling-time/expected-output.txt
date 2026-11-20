@@ -1,0 +1,13 @@
+RUN  v5.1.0 <repo>/steps/15-controlling-time
+
+ ✓ tests/cart.test.ts (27 tests)
+ ✓ tests/discounts.test.ts (12 tests)
+ ✓ tests/money.test.ts (18 tests)
+ ✓ tests/order-service-mocks.test.ts (10 tests)
+ ✓ tests/order-service.test.ts (14 tests)
+ ✓ tests/rate-client.test.ts (11 tests)
+ ✓ tests/reservation-book.test.ts (12 tests)
+ ✓ tests/shipping.test.ts (6 tests)
+
+ Test Files  8 passed (8)
+      Tests  110 passed (110)

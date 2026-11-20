@@ -1,0 +1,9 @@
+RUN  v5.1.0 <repo>/steps/05-testing-errors-and-edge-cases
+
+ ✓ tests/cart-errors.test.ts (12 tests)
+ ✓ tests/cart.test.ts (14 tests)
+ ✓ tests/money-errors.test.ts (7 tests)
+ ✓ tests/money.test.ts (9 tests)
+
+ Test Files  4 passed (4)
+      Tests  42 passed (42)

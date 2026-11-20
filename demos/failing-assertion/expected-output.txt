@@ -1,0 +1,30 @@
+RUN  v5.1.0 <repo>/demos/failing-assertion
+
+ ❯ tests/money.test.ts (3 tests | 1 failed)
+   ✓ formatPrice shows 1250 cents as $12.50
+   ✓ percentOf finds 10% of 1999 cents
+   × percentOf rounds half a cent up, so 50% of 5 cents is 3
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/money.test.ts > percentOf rounds half a cent up, so 50% of 5 cents is 3
+AssertionError: expected 2 to be 3 // Object.is equality
+
+- Expected
++ Received
+
+- 3
++ 2
+
+ ❯ tests/money.test.ts:13:28
+     11|
+     12| test("percentOf rounds half a cent up, so 50% of 5 cents is 3", () => {
+     13|   expect(percentOf(5, 50)).toBe(3);
+       |                            ^
+     14| });
+     15|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯

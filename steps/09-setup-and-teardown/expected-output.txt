@@ -1,0 +1,9 @@
+RUN  v5.1.0 <repo>/steps/09-setup-and-teardown
+
+ ✓ tests/cart.test.ts (26 tests)
+ ✓ tests/discounts.test.ts (10 tests)
+ ✓ tests/money.test.ts (16 tests)
+ ✓ tests/shipping.test.ts (6 tests)
+
+ Test Files  4 passed (4)
+      Tests  58 passed (58)

@@ -1,0 +1,4 @@
+{
+  "description": "Lesson 16. TDD cycle 1, red: the first gift card test fails because the class does not remember its balance yet.",
+  "runs": [{ "name": "tdd-1-red", "args": [], "exitCode": 1 }]
+}

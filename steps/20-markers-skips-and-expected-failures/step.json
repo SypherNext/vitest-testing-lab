@@ -1,0 +1,10 @@
+{
+  "extraRuns": [
+    { "name": "verbose-markers", "args": ["--reporter=verbose", "tests/markers.test.ts"] },
+    { "name": "run-slow-checks", "args": ["--reporter=verbose", "tests/markers.test.ts"], "env": { "RUN_SLOW_CHECKS": "1" } },
+    { "name": "only-slow-tag", "args": ["--tags-filter=slow", "tests/markers.test.ts"] },
+    { "name": "everything-except-slow-tag", "args": ["--tags-filter=not slow", "tests/markers.test.ts"] },
+    { "name": "only-database-tag", "args": ["--tags-filter=database"] },
+    { "name": "slow-files-by-name", "args": ["slow"] }
+  ]
+}

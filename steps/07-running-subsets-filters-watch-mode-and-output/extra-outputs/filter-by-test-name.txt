@@ -1,0 +1,7 @@
+RUN  v5.1.0 <repo>/steps/07-running-subsets-filters-watch-mode-and-output
+
+ ↓ tests/cart.test.ts (26 tests | 26 skipped)
+ ✓ tests/money.test.ts (16 tests | 7 skipped)
+
+ Test Files  1 passed | 1 skipped (2)
+      Tests  9 passed | 33 skipped (42)

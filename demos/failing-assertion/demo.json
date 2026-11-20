@@ -1,0 +1,4 @@
+{
+  "description": "Lesson 03. A failing toBe: percentOf rounds down instead of half up, so 50% of 5 gives 2, not 3.",
+  "runs": [{ "name": "failing-assertion", "args": [], "exitCode": 1 }]
+}

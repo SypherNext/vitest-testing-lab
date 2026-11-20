@@ -1,0 +1,16 @@
+tests/money.test.ts > formatPrice > shows 1250 cents as $12.50
+tests/money.test.ts > formatPrice > shows zero cents as $0.00
+tests/money.test.ts > formatPrice > pads a single digit of cents with a zero
+tests/money.test.ts > formatPrice > puts a comma between thousands
+tests/money.test.ts > formatPrice > puts the minus sign before the dollar sign
+tests/money.test.ts > formatPrice > at the edges > shows 1 cent as $0.01
+tests/money.test.ts > formatPrice > at the edges > shows 99 cents and then 100 cents on either side of a dollar
+tests/money.test.ts > formatPrice > at the edges > shows -0 as $0.00, with no minus sign
+tests/money.test.ts > formatPrice > with bad input > throws a TypeError when the cents are not a whole number
+tests/money.test.ts > percentOf > finds 10% of 1999 cents
+tests/money.test.ts > percentOf > rounds half a cent up, so 50% of 5 cents is 3
+tests/money.test.ts > percentOf > gives 0 when the percent is 0
+tests/money.test.ts > percentOf > gives the whole amount when the percent is 100
+tests/money.test.ts > percentOf > at the rounding point > rounds 49.5 cents up to 50 but 49.4 cents down to 49
+tests/money.test.ts > percentOf > with bad input > throws a TypeError when the cents are not a whole number
+tests/money.test.ts > percentOf > with bad input > throws a TypeError when the percent is not a whole number

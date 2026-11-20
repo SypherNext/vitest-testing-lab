@@ -1,0 +1,12 @@
+RUN  v5.1.0 <repo>/steps/20-markers-skips-and-expected-failures
+
+ ↓ tests/markers.test.ts > markers > shows a $5 gift card on the receipt (skipped until receipts show gift cards)
+ □ tests/markers.test.ts > markers > refuses more than 99 of one item in the cart
+ □ tests/markers.test.ts > markers > sends a reminder when a reservation is about to expire
+ ✓ tests/markers.test.ts > markers > known bug: percentOf accepts a percent above 100
+ ↓ tests/markers.test.ts > markers > runs the slow check when RUN_SLOW_CHECKS is 1
+ ✓ tests/markers.test.ts > markers > runs the quick check when RUN_SLOW_CHECKS is not 1
+ ✓ tests/markers.test.ts > markers > adds up a long list of numbers
+
+ Test Files  1 passed (1)
+      Tests  2 passed | 1 expected fail | 2 skipped | 2 todo (7)

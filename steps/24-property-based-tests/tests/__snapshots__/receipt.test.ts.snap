@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renderReceipt > with a snapshot stored in a file > prints the whole receipt for an order with a discount 1`] = `
+"CORNER SHOP
+Order ORD-1001   2026-03-14 09:30 UTC
+------------------------------
+2 x Notebook             $9.98
+1 x Pen                  $1.50
+------------------------------
+Subtotal                $11.48
+Discount (SAVE10)       -$1.15
+Shipping                 $4.99
+Total                   $15.32"
+`;

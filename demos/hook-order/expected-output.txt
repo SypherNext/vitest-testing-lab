@@ -1,0 +1,42 @@
+RUN  v5.1.0 <repo>/demos/hook-order
+
+stdout | tests/hooks.test.ts
+1. beforeAll (once, before the first test)
+
+stdout | tests/hooks.test.ts > a group of tests > first test
+   beforeEach (before every test)
+
+stdout | tests/hooks.test.ts > a group of tests > first test
+   beforeEach inside the group
+
+stdout | tests/hooks.test.ts > a group of tests > first test
+   -> first test runs
+
+stdout | tests/hooks.test.ts > a group of tests > first test
+   afterEach inside the group
+
+stdout | tests/hooks.test.ts > a group of tests > first test
+   afterEach (after every test)
+
+stdout | tests/hooks.test.ts > a group of tests > second test
+   beforeEach (before every test)
+
+stdout | tests/hooks.test.ts > a group of tests > second test
+   beforeEach inside the group
+
+stdout | tests/hooks.test.ts > a group of tests > second test
+   -> second test runs
+
+stdout | tests/hooks.test.ts > a group of tests > second test
+   afterEach inside the group
+
+stdout | tests/hooks.test.ts > a group of tests > second test
+   afterEach (after every test)
+
+stdout | tests/hooks.test.ts
+9. afterAll (once, after the last test)
+
+ ✓ tests/hooks.test.ts (2 tests)
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)

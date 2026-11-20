@@ -1,0 +1,44 @@
+RUN  v5.1.0 <repo>/demos/async-traps
+
+ ❯ tests/rate-client.test.ts (2 tests | 2 failed)
+   × trap 1: expect(promise) is compared before the answer has arrived
+   × trap 2: .rejects is not awaited, so the test would finish before the check is made
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/rate-client.test.ts > trap 1: expect(promise) is compared before the answer has arrived
+AssertionError: expected Promise{…} to be 0.92 // Object.is equality
+
+- Expected:
+0.92
+
++ Received:
+Promise {}
+
+ ❯ tests/rate-client.test.ts:16:16
+     14|   const rate = client.getRate("USD", "EUR"); // no await: this is a Pr…
+     15|
+     16|   expect(rate).toBe(0.92);
+       |                ^
+     17| });
+     18|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/rate-client.test.ts > trap 2: .rejects is not awaited, so the test would finish before the check is made
+Error: Promise returned by `expect(actual).rejects.toThrow(expected)` was not awaited. This assertion is asynchronous and must be awaited; otherwise, it is not guaranteed to complete before the test finishes:
+
+await expect(actual).rejects.toThrow(expected)
+
+ ❯ tests/rate-client.test.ts:23:39
+     21|   const client = new RateClient("https://rates.example.test");
+     22|
+     23|   expect(client.getRate("USD", "EUR")).rejects.toThrow("status 503"); …
+       |                                       ^
+     24| });
+     25|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯

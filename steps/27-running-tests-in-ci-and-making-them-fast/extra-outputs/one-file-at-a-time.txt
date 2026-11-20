@@ -1,0 +1,29 @@
+RUN  v5.1.0 <repo>/steps/27-running-tests-in-ci-and-making-them-fast
+
+ ✓ tests/money.test.ts > formatPrice > shows 1250 cents as $12.50
+ ✓ tests/money.test.ts > formatPrice > shows 0 cents as $0.00
+ ✓ tests/money.test.ts > formatPrice > shows 5 cents as $0.05
+ ✓ tests/money.test.ts > formatPrice > shows 123456 cents as $1,234.56
+ ✓ tests/money.test.ts > formatPrice > shows -320 cents as -$3.20
+ ✓ tests/money.test.ts > formatPrice > shows 1 cents as $0.01
+ ✓ tests/money.test.ts > formatPrice > shows 99 cents as $0.99
+ ✓ tests/money.test.ts > formatPrice > shows 100 cents as $1.00
+ ✓ tests/money.test.ts > formatPrice > shows 0 cents as $0.00
+ ✓ tests/money.test.ts > formatPrice > throws a TypeError when the cents are not a whole number
+ ✓ tests/money.test.ts > percentOf > finds 10% of 1999 cents: 200 (plain rounding up)
+ ✓ tests/money.test.ts > percentOf > finds 50% of 5 cents: 3 (half a cent rounds up)
+ ✓ tests/money.test.ts > percentOf > finds 0% of 1999 cents: 0 (0% is nothing)
+ ✓ tests/money.test.ts > percentOf > finds 100% of 1999 cents: 1999 (100% is everything)
+ ✓ tests/money.test.ts > percentOf > finds 10% of 495 cents: 50 (49.5 rounds up)
+ ✓ tests/money.test.ts > percentOf > finds 10% of 494 cents: 49 (49.4 rounds down)
+ ✓ tests/money.test.ts > percentOf > throws a TypeError for 10.5 cents and 10%: cents must be an integer
+ ✓ tests/money.test.ts > percentOf > throws a TypeError for 1000 cents and 12.5%: percent must be an integer
+ ✓ tests/shipping.test.ts > shippingCost > costs 499 cents for a subtotal of 1 (a tiny order pays the fee)
+ ✓ tests/shipping.test.ts > shippingCost > costs 499 cents for a subtotal of 1033 (a small order pays the fee)
+ ✓ tests/shipping.test.ts > shippingCost > costs 499 cents for a subtotal of 4999 (one cent below $50.00 still pays)
+ ✓ tests/shipping.test.ts > shippingCost > costs 0 cents for a subtotal of 5000 (exactly $50.00 is free)
+ ✓ tests/shipping.test.ts > shippingCost > costs 0 cents for a subtotal of 12000 (over $50.00 is free)
+ ✓ tests/shipping.test.ts > shippingCost > costs 0 cents for a subtotal of 0 (an empty cart has nothing to ship)
+
+ Test Files  2 passed (2)
+      Tests  24 passed (24)

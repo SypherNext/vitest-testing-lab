@@ -1,0 +1,22 @@
+RUN  v5.1.0 <repo>/demos/tdd-3-red
+
+ ❯ tests/gift-card.test.ts (2 tests | 1 failed)
+   ✓ starts with the balance it was created with
+   × redeeming takes the amount off the balance
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/gift-card.test.ts > redeeming takes the amount off the balance
+TypeError: card.redeem is not a function
+ ❯ tests/gift-card.test.ts:15:8
+     13|
+     14|   // @ts-expect-error redeem does not exist yet; the test runner still…
+     15|   card.redeem(1200);
+       |        ^
+     16|
+     17|   expect(card.balanceCents).toBe(3800);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯

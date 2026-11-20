@@ -1,0 +1,10 @@
+RUN  v5.1.0 <repo>/steps/12-test-doubles-stubs-fakes-and-spies
+
+ ✓ tests/cart.test.ts (27 tests)
+ ✓ tests/discounts.test.ts (12 tests)
+ ✓ tests/money.test.ts (18 tests)
+ ✓ tests/order-service.test.ts (12 tests)
+ ✓ tests/shipping.test.ts (6 tests)
+
+ Test Files  5 passed (5)
+      Tests  75 passed (75)

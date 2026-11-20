@@ -1,0 +1,32 @@
+{
+  "name": "vitest-testing-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Companion code for the Sypher course \"Testing with Vitest and pytest\" (TypeScript side).",
+  "type": "module",
+  "engines": {
+    "node": ">=26"
+  },
+  "scripts": {
+    "test": "node scripts/run-step.mjs app",
+    "test:step": "node scripts/run-step.mjs",
+    "coverage": "node scripts/run-step.mjs app --coverage",
+    "typecheck": "tsc --noEmit",
+    "verify": "node scripts/verify-all.mjs",
+    "verify:demos": "node scripts/verify-demos.mjs",
+    "capture": "node scripts/capture-outputs.mjs"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "10.4.2",
+    "@types/node": "26.6.6",
+    "@vitest/coverage-v8": "5.1.0",
+    "fast-check": "4.10.2",
+    "happy-dom": "21.0.4",
+    "typescript": "7.0.2",
+    "vitest": "5.1.0",
+    "yaml": "2.9.1"
+  },
+  "dependencies": {
+    "hono": "4.13.17"
+  }
+}

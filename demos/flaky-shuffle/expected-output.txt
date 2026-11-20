@@ -1,0 +1,50 @@
+RUN  v5.1.0 <repo>/demos/flaky-shuffle
+      Running tests with seed "3"
+
+ ❯ tests/shared-cart.test.ts (3 tests | 2 failed)
+   × starts empty
+   ✓ holds a pen after one is added
+   × has a subtotal of 150 cents after one pen is added
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/shared-cart.test.ts > starts empty
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/shared-cart.test.ts:10:24
+      8|
+      9| test("starts empty", () => {
+     10|   expect(cart.isEmpty).toBe(true);
+       |                        ^
+     11| });
+     12|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/shared-cart.test.ts > has a subtotal of 150 cents after one pen is added
+AssertionError: expected +0 to be 150 // Object.is equality
+
+- Expected
++ Received
+
+- 150
++ 0
+
+ ❯ tests/shared-cart.test.ts:20:25
+     18|
+     19| test("has a subtotal of 150 cents after one pen is added", () => {
+     20|   expect(cart.subtotal).toBe(150); // it never adds the pen itself: it…
+       |                         ^
+     21| });
+     22|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯

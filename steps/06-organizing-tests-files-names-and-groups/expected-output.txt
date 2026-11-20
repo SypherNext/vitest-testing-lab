@@ -1,0 +1,7 @@
+RUN  v5.1.0 <repo>/steps/06-organizing-tests-files-names-and-groups
+
+ ✓ tests/cart.test.ts (26 tests)
+ ✓ tests/money.test.ts (16 tests)
+
+ Test Files  2 passed (2)
+      Tests  42 passed (42)

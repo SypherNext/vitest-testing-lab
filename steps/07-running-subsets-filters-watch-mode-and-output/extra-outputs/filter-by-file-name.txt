@@ -1,0 +1,6 @@
+RUN  v5.1.0 <repo>/steps/07-running-subsets-filters-watch-mode-and-output
+
+ ✓ tests/cart.test.ts (26 tests)
+
+ Test Files  1 passed (1)
+      Tests  26 passed (26)

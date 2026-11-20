@@ -1,0 +1,4 @@
+{
+  "description": "Lesson 14. Two missing-await traps: comparing a Promise to a number, and a .rejects check that is not awaited.",
+  "runs": [{ "name": "async-traps", "args": [], "exitCode": 1 }]
+}

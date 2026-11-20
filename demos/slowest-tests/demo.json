@@ -1,0 +1,4 @@
+{
+  "description": "Lesson 27. A tiny project with two deliberately slow tests, used to try steps/27-.../slowest-tests.mjs. The slowest-tests output itself is saved with step 27.",
+  "runs": [{ "name": "slowest-tests-project", "args": [], "exitCode": 0 }]
+}

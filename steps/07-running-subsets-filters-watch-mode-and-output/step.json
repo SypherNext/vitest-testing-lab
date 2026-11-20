@@ -1,0 +1,11 @@
+{
+  "extraRuns": [
+    { "name": "filter-by-test-name", "args": ["-t", "formatPrice"] },
+    { "name": "filter-by-file-name", "args": ["cart"] },
+    { "name": "filter-by-file-and-test-name", "args": ["tests/cart.test.ts", "-t", "removeItem"] },
+    { "name": "reporter-verbose", "args": ["--reporter=verbose", "tests/money.test.ts"] },
+    { "name": "reporter-dot", "args": ["--reporter=dot"] },
+    { "name": "list-tests", "subcommand": "list", "args": ["tests/money.test.ts"] },
+    { "name": "list-files", "subcommand": "list", "args": ["--filesOnly"] }
+  ]
+}

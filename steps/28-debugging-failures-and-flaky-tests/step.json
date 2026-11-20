@@ -1,0 +1,9 @@
+{
+  "extraRuns": [
+    { "name": "shuffled-seed-1", "args": ["--sequence.shuffle", "--sequence.seed=1"] },
+    { "name": "shuffled-seed-2", "args": ["--sequence.shuffle", "--sequence.seed=2"] },
+    { "name": "one-file", "args": ["--reporter=verbose", "tests/cart-isolation.test.ts"] },
+    { "name": "one-test-by-name", "args": ["--reporter=verbose", "-t", "holds a pen after one is added"] },
+    { "name": "stop-after-first-failure", "args": ["--bail", "1"] }
+  ]
+}

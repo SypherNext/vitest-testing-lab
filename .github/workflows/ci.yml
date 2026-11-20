@@ -1,0 +1,28 @@
+# Runs every step's tests and the deliberately failing demos, the same way you do on your own computer.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: windows-latest
+    # Steps run in PowerShell on Windows runners (the default shell there).
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 26
+          cache: npm
+
+      # "npm ci" installs exactly the versions written in package-lock.json.
+      - run: npm ci
+
+      # Runs the tests of app/ and of every steps/ folder, compares their output with the saved
+      # expected-output.txt files, type-checks the TypeScript and parses the YAML files.
+      - run: node scripts/verify-all.mjs
+
+      # Checks that each demo in demos/ fails (or passes) exactly the way it is meant to.
+      - run: node scripts/verify-demos.mjs

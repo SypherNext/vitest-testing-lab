@@ -1,0 +1,4 @@
+{
+  "description": "Lesson 04. Why floats are not compared with toBe: 0.1 + 0.2 is 0.30000000000000004.",
+  "runs": [{ "name": "float-sum", "args": [], "exitCode": 1 }]
+}

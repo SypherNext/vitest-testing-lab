@@ -1,0 +1,4 @@
+{
+  "description": "Lesson 16. TDD cycle 1, green: the least code that passes the first gift card test.",
+  "runs": [{ "name": "tdd-2-green", "args": [], "exitCode": 0 }]
+}

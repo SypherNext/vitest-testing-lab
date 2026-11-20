@@ -1,0 +1,6 @@
+RUN  v5.1.0 <repo>/steps/03-your-first-tests
+
+ ✓ tests/money.test.ts (9 tests)
+
+ Test Files  1 passed (1)
+      Tests  9 passed (9)

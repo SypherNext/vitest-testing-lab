@@ -1,0 +1,38 @@
+RUN  v5.1.0 <repo>/demos/failing-object-equality
+
+ ❯ tests/cart.test.ts (1 test | 1 failed)
+   × lines lists the items in the order they were added
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/cart.test.ts > lines lists the items in the order they were added
+AssertionError: expected [ { sku: 'NB-1', …(4) }, …(1) ] to deeply equal [ { sku: 'NB-1', …(4) }, …(1) ]
+
+- Expected
++ Received
+
+@@ -1,10 +1,10 @@
+  [
+    {
+      "lineTotalCents": 998,
+      "name": "Notebook",
+-     "quantity": 3,
++     "quantity": 2,
+      "sku": "NB-1",
+      "unitPriceCents": 499,
+    },
+    {
+      "lineTotalCents": 150,
+
+ ❯ tests/cart.test.ts:11:24
+      9|   cart.addItem("PN-1", "Pen", 150);
+     10|
+     11|   expect(cart.lines()).toEqual([
+       |                        ^
+     12|     { sku: "NB-1", name: "Notebook", unitPriceCents: 499, quantity: 3,…
+     13|     { sku: "PN-1", name: "Pen", unitPriceCents: 150, quantity: 1, line…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯

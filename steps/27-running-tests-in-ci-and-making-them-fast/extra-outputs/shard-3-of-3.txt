@@ -1,0 +1,12 @@
+RUN  v5.1.0 <repo>/steps/27-running-tests-in-ci-and-making-them-fast
+
+ ✓ tests/api.test.ts (27 tests)
+ ✓ tests/cart.properties.test.ts (5 tests)
+ ✓ tests/cart.test.ts (27 tests)
+ ✓ tests/config.test.ts (8 tests)
+ ✓ tests/logger.test.ts (3 tests)
+ ✓ tests/order-export.test.ts (9 tests)
+ ✓ tests/order-repository.test.ts (17 tests)
+
+ Test Files  7 passed (7)
+      Tests  96 passed (96)

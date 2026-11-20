@@ -1,0 +1,11 @@
+RUN  v5.1.0 <repo>/steps/13-mocking-functions-and-modules
+
+ ✓ tests/cart.test.ts (27 tests)
+ ✓ tests/discounts.test.ts (12 tests)
+ ✓ tests/money.test.ts (18 tests)
+ ✓ tests/order-service-mocks.test.ts (9 tests)
+ ✓ tests/order-service.test.ts (12 tests)
+ ✓ tests/shipping.test.ts (6 tests)
+
+ Test Files  6 passed (6)
+      Tests  84 passed (84)

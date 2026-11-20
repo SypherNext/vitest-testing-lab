@@ -1,0 +1,6 @@
+RUN  v5.1.0 <repo>/demos/tdd-2-green
+
+ ✓ tests/gift-card.test.ts (1 test)
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)

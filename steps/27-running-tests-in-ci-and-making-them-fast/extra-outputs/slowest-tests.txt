@@ -1,0 +1,3 @@
+The 2 slowest of 5 tests:
+waits a long time (400 milliseconds)
+waits a short time (150 milliseconds)

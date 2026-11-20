@@ -1,0 +1,253 @@
+RUN  v5.1.0 <repo>/steps/28-debugging-failures-and-flaky-tests
+
+ ↓ tests/api.test.ts > POST /orders > when the order is placed > answers 201 with the id, the total and the time
+ ↓ tests/api.test.ts > POST /orders > when the order is placed > answers with JSON
+ ↓ tests/api.test.ts > POST /orders > when the order is placed > applies a discount code
+ ↓ tests/api.test.ts > POST /orders > when the order is placed > ships a big order for free
+ ↓ tests/api.test.ts > POST /orders > when the order is placed > takes the prices from the catalogue, not from the request
+ ↓ tests/api.test.ts > POST /orders > when the order is placed > reserves the stock and sends one confirmation
+ ↓ tests/api.test.ts > POST /orders > when the request is not valid (422) > answers 422 when the body is not JSON
+ ↓ tests/api.test.ts > POST /orders > when the request is not valid (422) > answers 422 when the body is a list
+ ↓ tests/api.test.ts > POST /orders > when the request is not valid (422) > answers 422 when there is no email
+ ↓ tests/api.test.ts > POST /orders > when the request is not valid (422) > answers 422 when the email has no @
+ ↓ tests/api.test.ts > POST /orders > when the request is not valid (422) > answers 422 when there are no items
+ ↓ tests/api.test.ts > POST /orders > when the request is not valid (422) > answers 422 when the item list is empty
+ ↓ tests/api.test.ts > POST /orders > when the request is not valid (422) > answers 422 when an item has no sku
+ ↓ tests/api.test.ts > POST /orders > when the request is not valid (422) > answers 422 when an item has an empty sku
+ ↓ tests/api.test.ts > POST /orders > when the request is not valid (422) > answers 422 when an item has no quantity
+ ↓ tests/api.test.ts > POST /orders > when the request is not valid (422) > answers 422 when the sku is not in the catalogue
+ ↓ tests/api.test.ts > POST /orders > when the request is not valid (422) > answers 422 when the quantity is zero
+ ↓ tests/api.test.ts > POST /orders > when the request is not valid (422) > answers 422 when the discount code is not text
+ ↓ tests/api.test.ts > POST /orders > when the request is not valid (422) > answers 422 when the discount code is unknown
+ ↓ tests/api.test.ts > POST /orders > when the request is not valid (422) > answers 422 when SAVE25 is used on a small order
+ ↓ tests/api.test.ts > POST /orders > when there is not enough stock (409) > answers 409 and names the sku
+ ↓ tests/api.test.ts > POST /orders > when the payment is declined (402) > answers 402 with the reason
+ ↓ tests/api.test.ts > POST /orders > when something breaks inside the shop (500) > answers 500 and keeps the details private
+ ↓ tests/api.test.ts > GET /orders/:id > answers 200 with the whole order after it was placed
+ ↓ tests/api.test.ts > GET /orders/:id > answers 404 when there is no such order
+ ↓ tests/api.test.ts > GET /orders/:id > does not keep an order that was refused
+ ↓ tests/api.test.ts > an unknown route > answers 404 with the same JSON shape
+ ↓ tests/cart-isolation.test.ts > Cart (each test has its own cart) > starts empty
+ ✓ tests/cart-isolation.test.ts > Cart (each test has its own cart) > holds a pen after one is added
+ ↓ tests/cart-isolation.test.ts > Cart (each test has its own cart) > has a subtotal of 150 cents after one pen is added
+ ↓ tests/cart-isolation.test.ts > Cart (each test has its own cart) > still starts empty when it runs after the tests above
+ ↓ tests/cart-widget.test.ts > renderCartWidget > with an empty cart > shows a friendly message
+ ↓ tests/cart-widget.test.ts > renderCartWidget > with an empty cart > shows no Remove button and no total
+ ↓ tests/cart-widget.test.ts > renderCartWidget > with items in the cart > shows each line with its quantity, name and price
+ ↓ tests/cart-widget.test.ts > renderCartWidget > with items in the cart > shows the total
+ ↓ tests/cart-widget.test.ts > renderCartWidget > with items in the cart > counts the items
+ ↓ tests/cart-widget.test.ts > renderCartWidget > with items in the cart > says '1 item' for a single item
+ ↓ tests/cart-widget.test.ts > renderCartWidget > with items in the cart > gives each Remove button a name that says which item it removes
+ ↓ tests/cart-widget.test.ts > renderCartWidget > when the shopper clicks Remove > takes that line off the screen
+ ↓ tests/cart-widget.test.ts > renderCartWidget > when the shopper clicks Remove > updates the total
+ ↓ tests/cart-widget.test.ts > renderCartWidget > when the shopper clicks Remove > also removes the item from the cart itself
+ ↓ tests/cart-widget.test.ts > renderCartWidget > when the shopper clicks Remove > shows the empty message again after the last item is removed
+ ↓ tests/cart.properties.test.ts > Cart > has a subtotal equal to the sum of price times quantity
+ ↓ tests/cart.properties.test.ts > Cart > has a total quantity equal to the sum of the quantities
+ ↓ tests/cart.properties.test.ts > Cart > has the same subtotal whatever order the items are added in
+ ↓ tests/cart.properties.test.ts > Cart > adds the quantities when the same item is added twice
+ ↓ tests/cart.properties.test.ts > Cart > is empty again after every item is removed
+ ↓ tests/cart.test.ts > Cart > a new cart > is empty
+ ↓ tests/cart.test.ts > Cart > addItem > defaults the quantity to 1
+ ↓ tests/cart.test.ts > Cart > addItem > adds the quantity when the same item is added twice
+ ↓ tests/cart.test.ts > Cart > addItem > keeps the price of the first add when the same item is added again
+ ↓ tests/cart.test.ts > Cart > addItem > accepts a quantity of 1, the smallest allowed
+ ↓ tests/cart.test.ts > Cart > addItem > accepts a price of 1 cent, the smallest allowed
+ ↓ tests/cart.test.ts > Cart > addItem > with a bad quantity > throws InvalidQuantityError for a quantity of 0
+ ↓ tests/cart.test.ts > Cart > addItem > with a bad quantity > explains the rule in the message
+ ↓ tests/cart.test.ts > Cart > addItem > with a bad quantity > matches part of the message with a regular expression
+ ↓ tests/cart.test.ts > Cart > addItem > with a bad quantity > leaves the cart as it was
+ ↓ tests/cart.test.ts > Cart > addItem > with a bad price > throws InvalidPriceError for a price of 0
+ ↓ tests/cart.test.ts > Cart > addItem > with a bad price > explains the rule in the message for a negative price
+ ↓ tests/cart.test.ts > Cart > removeItem > takes the item out of the cart
+ ↓ tests/cart.test.ts > Cart > removeItem > names the sku when the item is not in the cart
+ ↓ tests/cart.test.ts > Cart > removeItem > throws an error with a name that says what went wrong
+ ↓ tests/cart.test.ts > Cart > errors > can all be caught as a ShopError
+ ↓ tests/cart.test.ts > Cart > subtotal > is the unit price times the quantity
+ ↓ tests/cart.test.ts > Cart > subtotal > adds up every line
+ ↓ tests/cart.test.ts > Cart > subtotal > goes up when another item is added to a filled cart
+ ↓ tests/cart.test.ts > Cart > lines > lists the items in the order they were added
+ ↓ tests/cart.test.ts > Cart > lines > returns new objects each time, so toBe fails but toEqual passes
+ ↓ tests/cart.test.ts > Cart > lines > returns copies, so changing a line does not change the cart
+ ↓ tests/cart.test.ts > Cart > lines > can be checked with toMatchObject, which ignores the other fields
+ ↓ tests/cart.test.ts > Cart > lines > can be turned into a list of names and checked with toContain
+ ↓ tests/cart.test.ts > Cart > money as whole cents > 0.1 + 0.2 is not 0.3 when they are floats
+ ↓ tests/cart.test.ts > Cart > money as whole cents > toBeCloseTo is the right way to compare floats
+ ↓ tests/cart.test.ts > Cart > money as whole cents > whole cents add up exactly, so toBe is safe
+ ↓ tests/config.test.ts > loadConfig with the real environment > reads the settings from environment variables
+ ↓ tests/config.test.ts > loadConfig with the real environment > uses the defaults for the optional settings
+ ↓ tests/config.test.ts > loadConfig with the real environment > throws ConfigError when the tax region is not set
+ ↓ tests/config.test.ts > loadConfig with a plain object > counts a blank setting as not set
+ ↓ tests/config.test.ts > loadConfig with a plain object > ignores spaces around a value
+ ↓ tests/config.test.ts > loadConfig with a plain object > rejects the log level 'verbose'
+ ↓ tests/config.test.ts > loadConfig with a plain object > rejects the log level 'INFO'
+ ↓ tests/config.test.ts > loadConfig with a plain object > rejects the log level 'warn'
+ ↓ tests/discounts.test.ts > applyDiscountCode > without a code > gives no discount when the code is undefined
+ ↓ tests/discounts.test.ts > applyDiscountCode > without a code > gives no discount when the code is null
+ ↓ tests/discounts.test.ts > applyDiscountCode > without a code > gives no discount when the code is ""
+ ↓ tests/discounts.test.ts > applyDiscountCode > without a code > gives no discount when the code is "   "
+ ↓ tests/discounts.test.ts > applyDiscountCode > with a code that works > takes 115 cents off a subtotal of 1148 for the code 'SAVE10'
+ ↓ tests/discounts.test.ts > applyDiscountCode > with a code that works > takes 100 cents off a subtotal of 1000 for the code '  save10 '
+ ↓ tests/discounts.test.ts > applyDiscountCode > with a code that works > takes 1250 cents off a subtotal of 5000 for the code 'SAVE25'
+ ↓ tests/discounts.test.ts > applyDiscountCode > with a code that works > takes 500 cents off a subtotal of 1148 for the code 'WELCOME5'
+ ↓ tests/discounts.test.ts > applyDiscountCode > with a code that works > takes 300 cents off a subtotal of 300 for the code 'WELCOME5'
+ ↓ tests/discounts.test.ts > applyDiscountCode > with a code that is refused > throws a DiscountError for 'SAVE25' because the subtotal is one cent too low
+ ↓ tests/discounts.test.ts > applyDiscountCode > with a code that is refused > throws a DiscountError for ' Summer ' because nobody knows it
+ ↓ tests/discounts.test.ts > applyDiscountCode > with a code that is refused > throws a DiscountError for 'save 10' because a space is not allowed
+ ↓ tests/gift-card.test.ts > GiftCard > starts with the balance it was created with
+ ↓ tests/gift-card.test.ts > GiftCard > redeeming takes the amount off the balance
+ ↓ tests/gift-card.test.ts > GiftCard > redeeming returns the balance that is left
+ ↓ tests/gift-card.test.ts > GiftCard > refuses to redeem more than the balance
+ ↓ tests/gift-card.test.ts > GiftCard > keeps the balance when a redeem is refused
+ ↓ tests/gift-card.test.ts > GiftCard > can redeem the whole balance, which uses the card up
+ ↓ tests/gift-card.test.ts > GiftCard > refuses to redeem 0 cents
+ ↓ tests/gift-card.test.ts > GiftCard > refuses to redeem -5 cents
+ ↓ tests/gift-card.test.ts > GiftCard > refuses to redeem 2.5 cents
+ ↓ tests/gift-card.test.ts > GiftCard > refuses to redeem NaN cents
+ ↓ tests/gift-card.test.ts > GiftCard > refuses to create a card with a balance of 0 cents
+ ↓ tests/gift-card.test.ts > GiftCard > refuses to create a card with a balance of -5 cents
+ ↓ tests/gift-card.test.ts > GiftCard > refuses to create a card with a balance of 2.5 cents
+ ↓ tests/gift-card.test.ts > GiftCard > a card with money left is not used up
+ ↓ tests/large-cart.slow.test.ts > a very large cart > keeps 20000 different items and adds them up
+ ↓ tests/logger.test.ts > createLogger > prints info messages with an [info] label
+ ↓ tests/logger.test.ts > createLogger > hides debug messages at the info level
+ ↓ tests/logger.test.ts > createLogger > prints debug messages at the debug level
+ ↓ tests/markers.test.ts > markers > shows a $5 gift card on the receipt (skipped until receipts show gift cards)
+ ↓ tests/markers.test.ts > markers > refuses more than 99 of one item in the cart
+ ↓ tests/markers.test.ts > markers > sends a reminder when a reservation is about to expire
+ ↓ tests/markers.test.ts > markers > known bug: percentOf accepts a percent above 100
+ ↓ tests/markers.test.ts > markers > runs the slow check when RUN_SLOW_CHECKS is 1
+ ↓ tests/markers.test.ts > markers > runs the quick check when RUN_SLOW_CHECKS is not 1
+ ↓ tests/markers.test.ts > markers > adds up a long list of numbers
+ ↓ tests/money.properties.test.ts > percentOf > is never negative and never more than the amount
+ ↓ tests/money.properties.test.ts > percentOf > 0% is nothing and 100% is everything
+ ↓ tests/money.properties.test.ts > percentOf > a bigger percent never gives a smaller share
+ ↓ tests/money.properties.test.ts > percentOf > is within half a cent of the exact share
+ ↓ tests/money.properties.test.ts > formatPrice > always has a dollar sign, thousands commas and exactly two digits of cents
+ ↓ tests/money.properties.test.ts > formatPrice > keeps every digit: removing the signs gives the cents back
+ ↓ tests/money.properties.test.ts > formatPrice > shows a negative amount as a minus sign in front of the positive one
+ ↓ tests/money.test.ts > formatPrice > shows 1250 cents as $12.50
+ ↓ tests/money.test.ts > formatPrice > shows 0 cents as $0.00
+ ↓ tests/money.test.ts > formatPrice > shows 5 cents as $0.05
+ ↓ tests/money.test.ts > formatPrice > shows 123456 cents as $1,234.56
+ ↓ tests/money.test.ts > formatPrice > shows -320 cents as -$3.20
+ ↓ tests/money.test.ts > formatPrice > shows 1 cents as $0.01
+ ↓ tests/money.test.ts > formatPrice > shows 99 cents as $0.99
+ ↓ tests/money.test.ts > formatPrice > shows 100 cents as $1.00
+ ↓ tests/money.test.ts > formatPrice > shows 0 cents as $0.00
+ ↓ tests/money.test.ts > formatPrice > throws a TypeError when the cents are not a whole number
+ ↓ tests/money.test.ts > percentOf > finds 10% of 1999 cents: 200 (plain rounding up)
+ ↓ tests/money.test.ts > percentOf > finds 50% of 5 cents: 3 (half a cent rounds up)
+ ↓ tests/money.test.ts > percentOf > finds 0% of 1999 cents: 0 (0% is nothing)
+ ↓ tests/money.test.ts > percentOf > finds 100% of 1999 cents: 1999 (100% is everything)
+ ↓ tests/money.test.ts > percentOf > finds 10% of 495 cents: 50 (49.5 rounds up)
+ ↓ tests/money.test.ts > percentOf > finds 10% of 494 cents: 49 (49.4 rounds down)
+ ↓ tests/money.test.ts > percentOf > throws a TypeError for 10.5 cents and 10%: cents must be an integer
+ ↓ tests/money.test.ts > percentOf > throws a TypeError for 1000 cents and 12.5%: percent must be an integer
+ ↓ tests/order-export.test.ts > ordersToCsv > starts with a header line
+ ↓ tests/order-export.test.ts > ordersToCsv > writes one line per order
+ ↓ tests/order-export.test.ts > ordersToCsv > wraps a field that contains a comma in quotes
+ ↓ tests/order-export.test.ts > ordersToCsv > writes a quote inside a field twice
+ ↓ tests/order-export.test.ts > exportOrdersToFile > writes the CSV to the file
+ ↓ tests/order-export.test.ts > exportOrdersToFile > creates the folder when it does not exist yet
+ ↓ tests/order-export.test.ts > exportOrdersToFile > replaces a file that is already there
+ ↓ tests/order-export.test.ts > exportOrdersToFile > logs one summary line at the info level
+ ↓ tests/order-export.test.ts > exportOrdersToFile > also logs each order at the debug level
+ ↓ tests/order-repository.test.ts > the database schema > starts with an empty orders table
+ ↓ tests/order-repository.test.ts > the database schema > can be created twice without an error
+ ↓ tests/order-repository.test.ts > the database schema > refuses a line for an order that does not exist
+ ↓ tests/order-repository.test.ts > OrderRepository > save and findById > gives back the order that was saved, lines and all
+ ↓ tests/order-repository.test.ts > OrderRepository > save and findById > keeps the lines in the order they were saved
+ ↓ tests/order-repository.test.ts > OrderRepository > save and findById > keeps an order without a discount code
+ ↓ tests/order-repository.test.ts > OrderRepository > save and findById > gives back undefined for an order that was never saved
+ ↓ tests/order-repository.test.ts > OrderRepository > save and findById > does not see the order from the test before, because every test has its own database
+ ↓ tests/order-repository.test.ts > OrderRepository > a unique constraint > refuses a second order with the same id
+ ↓ tests/order-repository.test.ts > OrderRepository > a unique constraint > keeps the first order when the second is refused
+ ↓ tests/order-repository.test.ts > OrderRepository > a rollback > undoes the whole save when one line cannot be saved
+ ↓ tests/order-repository.test.ts > OrderRepository > a rollback > leaves no lines behind
+ ↓ tests/order-repository.test.ts > OrderRepository > a rollback > lets the next save work normally
+ ↓ tests/order-repository.test.ts > OrderRepository > queries > listByEmail gives only that customer's orders, oldest first
+ ↓ tests/order-repository.test.ts > OrderRepository > queries > listByEmail gives an empty list for a customer with no orders
+ ↓ tests/order-repository.test.ts > OrderRepository > queries > totalSpentCents adds up the totals of one customer
+ ↓ tests/order-repository.test.ts > OrderRepository > queries > totalSpentCents is 0 for a customer with no orders
+ ↓ tests/order-service-mocks.test.ts > vi.fn: a stand-in function that records its calls > charge is called once with the email and the total
+ ↓ tests/order-service-mocks.test.ts > vi.fn: a stand-in function that records its calls > mockResolvedValueOnce gives a different answer for the first call only
+ ↓ tests/order-service-mocks.test.ts > vi.fn: a stand-in function that records its calls > mockRejectedValue makes the payment service fail
+ ↓ tests/order-service-mocks.test.ts > vi.fn: a stand-in function that records its calls > the payment is taken before the confirmation is sent
+ ↓ tests/order-service-mocks.test.ts > vi.fn: a stand-in function that records its calls > the confirmation gets the finished order
+ ↓ tests/order-service-mocks.test.ts > vi.spyOn: watch a real method, and keep or replace what it does > a spy keeps the real behaviour unless told otherwise
+ ↓ tests/order-service-mocks.test.ts > vi.spyOn: watch a real method, and keep or replace what it does > mockImplementation replaces the real behaviour
+ ↓ tests/order-service-mocks.test.ts > vi.spyOn: watch a real method, and keep or replace what it does > restoreAllMocks puts the real method back
+ ↓ tests/order-service-mocks.test.ts > vi.mock: replace a whole module > the order service uses the replaced applyDiscountCode
+ ↓ tests/order-service-mocks.test.ts > vi.mock: replace a whole module > a module mock hides the real rules, so unknown codes no longer fail here
+ ↓ tests/order-service-rules.test.ts > OrderService: discounts and shipping > charges shipping on a small order
+ ↓ tests/order-service-rules.test.ts > OrderService: discounts and shipping > ships a $50.00 order for free
+ ↓ tests/order-service-rules.test.ts > OrderService: discounts and shipping > works out shipping after the discount, so a discount can bring back the shipping fee
+ ↓ tests/order-service-rules.test.ts > OrderService: discounts and shipping > applies SAVE25 when the subtotal is high enough
+ ↓ tests/order-service-rules.test.ts > OrderService: discounts and shipping > records no discount code when none is given
+ ↓ tests/order-service-rules.test.ts > OrderService: discounts and shipping > keeps the cart lines on the order
+ ↓ tests/order-service-rules.test.ts > OrderService: what must not happen when an order fails > a refused discount code stops the order before anything is reserved or charged
+ ↓ tests/order-service-rules.test.ts > OrderService: what must not happen when an order fails > an unknown discount code names the code as it was typed
+ ↓ tests/order-service-rules.test.ts > OrderService: what must not happen when an order fails > a declined payment does not use up an order id
+ ↓ tests/order-service-rules.test.ts > OrderService: what must not happen when an order fails > a second service starts counting again at ORD-1001
+ ↓ tests/order-service-rules.test.ts > OrderService: what must not happen when an order fails > stock that was reserved by one order is not available to the next
+ ↓ tests/order-service.test.ts > OrderService.placeOrder > when everything works > returns an order with the discount, shipping and total worked out
+ ↓ tests/order-service.test.ts > OrderService.placeOrder > when everything works > stamps the order with the time from the clock
+ ↓ tests/order-service.test.ts > OrderService.placeOrder > when everything works > reserves the stock for every line
+ ↓ tests/order-service.test.ts > OrderService.placeOrder > when everything works > charges the customer the total
+ ↓ tests/order-service.test.ts > OrderService.placeOrder > when everything works > sends one confirmation to the customer
+ ↓ tests/order-service.test.ts > OrderService.placeOrder > when everything works > gives each new order the next id, starting at ORD-1001
+ ↓ tests/order-service.test.ts > OrderService.placeOrder > when the cart is empty > rejects with EmptyCartError
+ ↓ tests/order-service.test.ts > OrderService.placeOrder > when there is not enough stock > rejects with OutOfStockError naming the sku
+ ↓ tests/order-service.test.ts > OrderService.placeOrder > when there is not enough stock > reserves nothing and charges nothing
+ ↓ tests/order-service.test.ts > OrderService.placeOrder > when the payment is declined > rejects with PaymentDeclinedError and the reason
+ ↓ tests/order-service.test.ts > OrderService.placeOrder > when the payment is declined > puts the reserved stock back
+ ↓ tests/order-service.test.ts > OrderService.placeOrder > when the payment is declined > sends no confirmation
+ ↓ tests/order-service.test.ts > OrderService.placeOrder > when the payment service breaks > passes the problem on to the caller
+ ↓ tests/order-service.test.ts > OrderService.placeOrder > when the payment service breaks > still puts the reserved stock back
+ ↓ tests/rate-client.test.ts > RateClient.getRate > asks the service for the rate between two currencies
+ ↓ tests/rate-client.test.ts > RateClient.getRate > returns the rate from the answer
+ ↓ tests/rate-client.test.ts > RateClient.getRate > rejects with RateUnavailableError when the service answers with an error status
+ ↓ tests/rate-client.test.ts > RateClient.getRate > rejects when the network is down
+ ↓ tests/rate-client.test.ts > RateClient.getRate > rejects when the rate is text
+ ↓ tests/rate-client.test.ts > RateClient.getRate > rejects when the rate is zero
+ ↓ tests/rate-client.test.ts > RateClient.getRate > rejects when the rate is negative
+ ↓ tests/rate-client.test.ts > RateClient.getRate > rejects when there is no rate
+ ↓ tests/rate-client.test.ts > RateClient.getRate > rejects when the answer is not JSON
+ ↓ tests/rate-client.test.ts > RateClient.convert > multiplies the cents by the rate
+ ↓ tests/rate-client.test.ts > RateClient.convert > rounds half a cent up
+ ↓ tests/receipt.test.ts > renderReceipt > with a snapshot stored in a file > prints the whole receipt for an order with a discount
+ ↓ tests/receipt.test.ts > renderReceipt > with a snapshot written inside the test > prints the whole receipt for an order without a discount
+ ↓ tests/receipt.test.ts > renderReceipt > the rules of the layout > leaves out the discount line when there is no discount
+ ↓ tests/receipt.test.ts > renderReceipt > the rules of the layout > shows the discount code and the amount as a negative price
+ ↓ tests/receipt.test.ts > renderReceipt > the rules of the layout > makes every row under the header exactly 30 characters wide
+ ↓ tests/receipt.test.ts > renderReceipt > the rules of the layout > puts the amounts on the right edge
+ ↓ tests/receipt.test.ts > renderReceipt > the rules of the layout > keeps one space between a very long name and its price
+ ↓ tests/receipt.test.ts > renderReceipt > the rules of the layout > shows the order id and the time in UTC
+ ↓ tests/reservation-book.test.ts > ReservationBook with a clock we pass in > a new hold is not expired
+ ↓ tests/reservation-book.test.ts > ReservationBook with a clock we pass in > a hold is still alive one minute before the 15 minutes are up
+ ↓ tests/reservation-book.test.ts > ReservationBook with a clock we pass in > a hold expires at the exact moment the 15 minutes are up
+ ↓ tests/reservation-book.test.ts > ReservationBook with a clock we pass in > a hold can ask for a different number of minutes
+ ↓ tests/reservation-book.test.ts > ReservationBook with a clock we pass in > holding an order again starts its time again
+ ↓ tests/reservation-book.test.ts > ReservationBook with a clock we pass in > asking about an order that was never held throws UnknownReservationError
+ ↓ tests/reservation-book.test.ts > ReservationBook with a clock we pass in > sweep > removes the expired holds and returns their ids
+ ↓ tests/reservation-book.test.ts > ReservationBook with a clock we pass in > sweep > forgets a removed hold
+ ↓ tests/reservation-book.test.ts > ReservationBook with a clock we pass in > sweep > returns an empty list when nothing has expired
+ ↓ tests/reservation-book.test.ts > ReservationBook with the real clock and fake timers > the system clock now reads the time we set
+ ↓ tests/reservation-book.test.ts > ReservationBook with the real clock and fake timers > advancing the fake time expires a hold
+ ↓ tests/reservation-book.test.ts > ReservationBook with the real clock and fake timers > setSystemTime can jump straight to a moment
+ ↓ tests/shipping.test.ts > shippingCost > costs 499 cents for a subtotal of 1 (a tiny order pays the fee)
+ ↓ tests/shipping.test.ts > shippingCost > costs 499 cents for a subtotal of 1033 (a small order pays the fee)
+ ↓ tests/shipping.test.ts > shippingCost > costs 499 cents for a subtotal of 4999 (one cent below $50.00 still pays)
+ ↓ tests/shipping.test.ts > shippingCost > costs 0 cents for a subtotal of 5000 (exactly $50.00 is free)
+ ↓ tests/shipping.test.ts > shippingCost > costs 0 cents for a subtotal of 12000 (over $50.00 is free)
+ ↓ tests/shipping.test.ts > shippingCost > costs 0 cents for a subtotal of 0 (an empty cart has nothing to ship)
+ ↓ tests/shop-rules.properties.test.ts > applyDiscountCode > never takes off more than the subtotal and never a negative amount
+ ↓ tests/shop-rules.properties.test.ts > applyDiscountCode > lets SAVE25 take off a quarter, rounded, once the subtotal is $50.00 or more
+ ↓ tests/shop-rules.properties.test.ts > applyDiscountCode > treats a code the same in any mix of upper and lower case
+ ↓ tests/shop-rules.properties.test.ts > shippingCost > is only ever 0 or 499
+ ↓ tests/shop-rules.properties.test.ts > shippingCost > is free from $50.00 up
+ ↓ tests/shop-rules.properties.test.ts > shippingCost > is 499 for every subtotal from 1 to 4999
+
+ Test Files  1 passed | 22 skipped (23)
+      Tests  1 passed | 247 skipped (248)

@@ -1,0 +1,4 @@
+{
+  "description": "Lesson 20. A tag that is not listed in vitest.config.ts is an error, so a typo cannot hide a test.",
+  "runs": [{ "name": "unknown-tag", "args": [], "exitCode": 1 }]
+}

@@ -1,0 +1,41 @@
+RUN  v5.1.0 <repo>/demos/property-shrinking
+
+ ❯ tests/percent-of.test.ts (1 test | 1 failed)
+   × 10% of any amount is less than 1000 cents
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/percent-of.test.ts > 10% of any amount is less than 1000 cents
+Error: Property failed after 1 tests
+{ seed: 42, path: "0:1:0:0:0:0:0:1:1:0:0:3:2", endOnFailure: true }
+Counterexample: [9995]
+Shrunk 12 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+ ❯ buildError ../../node_modules/fast-check/lib/fast-check.js:2469:16
+ ❯ throwIfFailed ../../node_modules/fast-check/lib/fast-check.js:2476:8
+ ❯ reportRunDetails ../../node_modules/fast-check/lib/fast-check.js:2492:14
+ ❯ Module.assert ../../node_modules/fast-check/lib/fast-check.js:2662:7
+ ❯ tests/percent-of.test.ts:11:6
+      9| // The fixed seed makes the run the same every time, so the output in …
+     10| test("10% of any amount is less than 1000 cents", () => {
+     11|   fc.assert(
+       |      ^
+     12|     fc.property(fc.integer({ min: 0, max: 1_000_000 }), (cents) => {
+     13|       expect(percentOf(cents, 10)).toBeLessThan(1000);
+
+Caused by: AssertionError: expected 1000 to be less than 1000
+ ❯ tests/percent-of.test.ts:13:36
+ ❯ Property.predicate ../../node_modules/fast-check/lib/fast-check.js:1355:99
+ ❯ Property.run ../../node_modules/fast-check/lib/fast-check.js:1324:24
+ ❯ propertyExecution ../../node_modules/fast-check/lib/fast-check.js:2549:23
+ ❯ run ../../node_modules/fast-check/lib/fast-check.js:2639:91
+ ❯ runIt ../../node_modules/fast-check/lib/fast-check.js:2542:15
+ ❯ check ../../node_modules/fast-check/lib/fast-check.js:2655:14
+ ❯ Module.assert ../../node_modules/fast-check/lib/fast-check.js:2660:14
+ ❯ tests/percent-of.test.ts:11:6
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯

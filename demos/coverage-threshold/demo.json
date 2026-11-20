@@ -1,0 +1,4 @@
+{
+  "description": "Lesson 25. All tests pass, but the run fails because branch coverage is below the threshold in vitest.config.ts.",
+  "runs": [{ "name": "coverage-threshold", "args": ["--coverage"], "exitCode": 1 }]
+}

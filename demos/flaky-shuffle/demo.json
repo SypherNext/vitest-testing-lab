@@ -1,0 +1,7 @@
+{
+  "description": "Lesson 28. Tests that share one cart. They pass in file order and fail when Vitest shuffles them. The seed makes the shuffle repeatable.",
+  "runs": [
+    { "name": "shuffled-seed-3", "args": ["--sequence.shuffle", "--sequence.seed=3"], "exitCode": 1, "output": "expected-output.txt" },
+    { "name": "in-file-order", "args": [], "exitCode": 0, "output": "expected-output-in-file-order.txt" }
+  ]
+}

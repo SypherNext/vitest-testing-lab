@@ -1,0 +1,15 @@
+RUN  v5.1.0 <repo>/steps/17-milestone-a-fully-tested-order-service
+
+ ✓ tests/cart.test.ts (27 tests)
+ ✓ tests/discounts.test.ts (12 tests)
+ ✓ tests/gift-card.test.ts (14 tests)
+ ✓ tests/money.test.ts (18 tests)
+ ✓ tests/order-service-mocks.test.ts (10 tests)
+ ✓ tests/order-service-rules.test.ts (11 tests)
+ ✓ tests/order-service.test.ts (14 tests)
+ ✓ tests/rate-client.test.ts (11 tests)
+ ✓ tests/reservation-book.test.ts (12 tests)
+ ✓ tests/shipping.test.ts (6 tests)
+
+ Test Files  10 passed (10)
+      Tests  135 passed (135)

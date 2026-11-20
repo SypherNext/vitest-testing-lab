@@ -1,0 +1,6 @@
+RUN  v5.1.0 <repo>/demos/flaky-shuffle
+
+ ✓ tests/shared-cart.test.ts (3 tests)
+
+ Test Files  1 passed (1)
+      Tests  3 passed (3)

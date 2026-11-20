@@ -1,0 +1,8 @@
+{
+  "extraRuns": [
+    {
+      "name": "manual-check",
+      "command": ["node", "steps/02-what-a-test-is-and-how-a-runner-finds-it/manual-check.ts"]
+    }
+  ]
+}

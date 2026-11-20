@@ -1,0 +1,6 @@
+RUN  v5.1.0 <repo>/steps/07-running-subsets-filters-watch-mode-and-output
+
+··········································
+
+ Test Files  2 passed (2)
+      Tests  42 passed (42)

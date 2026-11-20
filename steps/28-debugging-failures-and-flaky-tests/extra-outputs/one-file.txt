@@ -1,0 +1,9 @@
+RUN  v5.1.0 <repo>/steps/28-debugging-failures-and-flaky-tests
+
+ ✓ tests/cart-isolation.test.ts > Cart (each test has its own cart) > starts empty
+ ✓ tests/cart-isolation.test.ts > Cart (each test has its own cart) > holds a pen after one is added
+ ✓ tests/cart-isolation.test.ts > Cart (each test has its own cart) > has a subtotal of 150 cents after one pen is added
+ ✓ tests/cart-isolation.test.ts > Cart (each test has its own cart) > still starts empty when it runs after the tests above
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)

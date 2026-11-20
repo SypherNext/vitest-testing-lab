@@ -1,0 +1,13 @@
+RUN  v5.1.0 <repo>/steps/27-running-tests-in-ci-and-making-them-fast
+
+ ✓ tests/gift-card.test.ts (14 tests)
+ ✓ tests/markers.test.ts (7 tests | 2 skipped | 2 todo)
+ ✓ tests/money.properties.test.ts (7 tests)
+ ✓ tests/money.test.ts (18 tests)
+ ✓ tests/order-service-rules.test.ts (11 tests)
+ ✓ tests/order-service.test.ts (14 tests)
+ ✓ tests/rate-client.test.ts (11 tests)
+ ✓ tests/reservation-book.test.ts (12 tests)
+
+ Test Files  8 passed (8)
+      Tests  89 passed | 1 expected fail | 2 skipped | 2 todo (94)

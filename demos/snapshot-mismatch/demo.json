@@ -1,0 +1,4 @@
+{
+  "description": "Lesson 21. A snapshot mismatch: the code now prints Delivery where the saved receipt says Shipping.",
+  "runs": [{ "name": "snapshot-mismatch", "args": [], "exitCode": 1 }]
+}

@@ -1,0 +1,4 @@
+{
+  "description": "Lesson 24. A property that is wrong for big amounts. fast-check shrinks the failing input to the smallest one, 9995 cents.",
+  "runs": [{ "name": "property-shrinking", "args": [], "exitCode": 1 }]
+}

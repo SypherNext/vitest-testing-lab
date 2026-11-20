@@ -1,0 +1,4 @@
+{
+  "description": "Lesson 09. A passing run that prints a line from every hook, to show the order beforeAll, beforeEach, test, afterEach, afterAll.",
+  "runs": [{ "name": "hook-order", "args": [], "exitCode": 0 }]
+}
